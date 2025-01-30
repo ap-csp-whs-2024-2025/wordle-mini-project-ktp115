@@ -12,13 +12,34 @@
 #include <vector>    // std::vector
 
 std::vector<int> createSecret() {
-    // Write this procedure here
-    return {};    // replace this with your code
+    std::vector <int> code = {};
+    int counter = 0;
+    while (counter <  4) //4 times
+    {
+        int val = rand() % 10;
+        code.push_back(val);
+        counter = counter + 1;
+    }
+    return {code};    
 }
 
 std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess) {
-    // Write this procedure here
-    return {"X", "X", "X", "X"};    // replace this with your code
+    std::vector <std::string> hint = {};
+    int index = 0;
+
+    while(index < secret.size())
+    {
+        if(secret[index] == guess[index])
+        {
+            hint.push_back("0");
+        }
+        else
+        {
+            hint.push_back("X");
+        }
+        index = index + 1;
+    }
+    return {hint};    // replace this with your code
 }
 
 bool winGame(std::vector<int> secret, std::vector<int> guess) {
@@ -28,7 +49,8 @@ bool winGame(std::vector<int> secret, std::vector<int> guess) {
 
 int main()
 {
-    // Seeding the random number generator
+    srand(time(0));    // seeds random number generator
+    int random_num = rand() % 10;    // random number between 0 and 9
     // Uncomment the code when you are finished testing your program
     // and want to have the program run for real
     // srand(time(0));
@@ -50,7 +72,7 @@ int main()
         {
             int input;
             std::cin >> input;
-            guess.push_back(input);    // can also do append(guess, input);
+            user_guess.push_back(input);    // can also do append(guess, input);
         }
 
         hint = getHint(secret_code, user_guess);
