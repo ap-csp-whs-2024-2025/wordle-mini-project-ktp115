@@ -71,7 +71,7 @@ int main()
         {
             int input;
             std::cin >> input;
-            user_guess.push_back(input);    // can also do append(guess, input);
+            user_guess.push_back(input);    
         }
 
         hint = getHint(secret_code, user_guess);
