@@ -39,12 +39,12 @@ std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess
         }
         index = index + 1;
     }
-    return {hint};    // replace this with your code
+    return {hint};   
 }
 
 bool winGame(std::vector<int> secret, std::vector<int> guess) {
     {
-    return secret == guess; //from 
+    return secret == guess; 
     }
 }
 
