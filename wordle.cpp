@@ -43,17 +43,15 @@ std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess
 }
 
 bool winGame(std::vector<int> secret, std::vector<int> guess) {
-    // Write this procedure here
-    return false;    // replace this with your code
+    {
+    return secret == guess; //from 
+    }
 }
 
 int main()
 {
     srand(time(0));    // seeds random number generator
     int random_num = rand() % 10;    // random number between 0 and 9
-    // Uncomment the code when you are finished testing your program
-    // and want to have the program run for real
-    // srand(time(0));
     
     std::vector<int> secret_code = createSecret();
     std::vector<int> user_guess = {};
@@ -68,6 +66,7 @@ int main()
     {
         std::cout << "\nEnter your guess: ";
         hint = {};    // reset the hint for the next guess
+        user_guess = {}; //reset guess
         for (int counter = 0; counter < secret_code_length; counter = counter + 1)
         {
             int input;
